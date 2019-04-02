@@ -1,0 +1,7 @@
+# A successful build produces the following files:
+asset-tag-creator/target/lib-asset-tag-creator-*-with-dependencies.jar
+asset-tag-creator/target/lib-asset-tag-creator-*-dependencies.zip
+asset-tag-creator/target/lib-asset-tag-creator-*.jar
+asset-tag-creator/target/lib-asset-tag-creator-*-javadoc.zip
+asset-tag-creator-integration/target/asset-tag-creator-integration-*.jar
+asset-tag-creator-integration/target/asset-tag-creator-integration-*-with-dependencies.jar

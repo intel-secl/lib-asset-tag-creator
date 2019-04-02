@@ -1,0 +1,4 @@
+target
+.idea
+*.iml
+/asset-tag-creator-integration/nbproject/
