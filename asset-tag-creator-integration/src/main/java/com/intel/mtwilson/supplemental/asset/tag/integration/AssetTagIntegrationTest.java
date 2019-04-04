@@ -147,20 +147,7 @@ public class AssetTagIntegrationTest {
     public byte[] createCertificateX509(String hostname){ 
         return certificateBuilder.createCertificateX509(hostname);
     }
-    /*
-    @Integration
-    public byte[] createCertificateX509FromJson() throws IOException, OperatorCreationException{
-        TagSelection selection = TagSelectionBuilder.factory()
-                .selectionName("Developers")
-                .selectionDescription("This Selection contains developers")
-                .textKvAttribute("John", "FM")
-                .textKvAttribute("Louis", "GDC").build();
-         Gson gson = new GsonBuilder().create();
-         String json = gson.toJson(selection);
-         String hostname ="3e55a51d-c6aa-4b4a-ac39-fbd2624a1f12";
-        return certificateBuilder.createCertificateX509FromJson(hostname, json);
-    }*/
-    
+
     @Integration
     public byte[] createCertificateX509FromJson(String issuer, String hostname, String selectionName, String selectionDesc, String[] attributes) throws IOException, OperatorCreationException, NoSuchAlgorithmException, CertificateException {
         TagSelectionBuilder builder = TagSelectionBuilder.factory()
@@ -174,8 +161,7 @@ public class AssetTagIntegrationTest {
          TagSelection selection = builder.build();
          Gson gson = new GsonBuilder().create();
          String json = gson.toJson(selection);
-         //String hostname ="3e55a51d-c6aa-4b4a-ac39-fbd2624a1f12";
-        
+
          KeyPair cakey = RsaUtil.generateRsaKeyPair(2048);
          X509Certificate cacert = X509Builder.factory().selfSigned(issuer, cakey).build();
          certificateBuilder = TagCertificateBuilder.factory()
