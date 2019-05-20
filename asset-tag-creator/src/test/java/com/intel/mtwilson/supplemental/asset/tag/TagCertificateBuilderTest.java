@@ -8,7 +8,6 @@ import com.intel.mtwilson.supplemental.asset.tag.model.TagKvAttribute;
 import org.junit.Test;
 import com.intel.dcsg.cpg.crypto.RsaUtil;
 import com.intel.dcsg.cpg.x509.X509Builder;
-import com.intel.mtwilson.supplemental.asset.tag.TagCertificateBuilder;
 import com.intel.mtwilson.supplemental.asset.tag.model.TagSelection;
 import java.io.IOException;
 import java.security.KeyPair;
@@ -36,10 +35,6 @@ public class TagCertificateBuilderTest {
         
         assertEquals(selection.getClass(),builder.selectionFromJson(json).getClass());
         ArrayList<TagKvAttribute> list = selection.getSelection();
-      /*  for( int x=0; x< list.size(); x++){
-            System.out.println(list.get(x).getName());
-            System.out.println(list.get(x).getValue());
-        }*/
     }
     
     
@@ -66,5 +61,3 @@ public class TagCertificateBuilderTest {
   
 
 }
-        
-        
